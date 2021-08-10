@@ -12,7 +12,7 @@ const NavBar = () => {
                         exact
                         activeClassName="text-white"
                         className="inline-flex items-center py-6 px-3 mr-4 text-red-100 hover:text-gray-500 text-4xl font-bold cursive tracking-widest">
-                        Reinaldo
+                        reinaldoAssis
                     </NavLink>
                     {/* <NavLink
                         to="/post"
