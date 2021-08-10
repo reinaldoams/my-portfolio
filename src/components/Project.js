@@ -15,14 +15,21 @@ const Project = () => {
             description,
             projectType,
             link,
-            tags
+            tags,
+            mainImage{
+                asset->{
+                    _id,
+                    url
+                },
+                alt
+            }            
         }`
             )
             .then((data) => setProjectData(data))
             .catch(console.error)
     }, []);
     return (
-        <main className="bg-green-100 min-h-screen p-12">
+        <main className="bg-blue-100 min-h-screen p-12">
             <section className="container mx-auto">
                 <h1 className="text-5xl flex justify-center cursive">My Projects</h1>
                 <h2 className="text-lg text-gray-600 flex justify-center mb-12">
@@ -31,8 +38,8 @@ const Project = () => {
                 <section className="grid grid-cols-2 gap-8">
                     {projectData &&
                     projectData.map((project, index) => (
-                        <article className="relative rouded-lg shadow-xl bg-white p-16">
-                            <h3 className="text-grey-800 text-3xl font-bold mb-2 hover:text-red-700">
+                        <article className="relative rounded-lg shadow-xl bg-white p-16">
+                            <h3 className="text-grey-800 text-3xl font-bold mb-2 hover:text-blue-700">
                                 <a
                                     href={project.link}
                                     alt={project.title}
@@ -58,13 +65,18 @@ const Project = () => {
                                 <p className="my-6 text-lg text-grey-700 leading-relaxed">
                                     {project.description}
                                 </p>
-                                <a href={project.link} rel="noopener noreferrer" target="_blank" className="text-red-500 font-bold hover:underline hover:text-red-400 text-xl">
+                                <a href={project.link} rel="noopener noreferrer" target="_blank" className="text-blue-500 font-bold hover:underline hover:text-gray-400 text-xl">
                                     View the Project{" "}
                                     <span role="img" aria-label="right pointer">
-                                        👉
+                                    🔗
                                     </span>
                                 </a>
                             </div>
+                            <img
+                                        src={project.mainImage.asset.url}
+                                        alt={project.mainImage.alt}
+                                        className="w-full h-65 rounded-r object-cover pt-5"
+                                    />
                         </article>
                     ))}
                 </section>

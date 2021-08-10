@@ -4,7 +4,6 @@ import sanityClient from "../client";
 import imageUrlBuilder from "@sanity/image-url";
 // no tutorial apenas é from "@sanity/image-url", deixei completo acima testando o autocomplete
 import BlockContent from "@sanity/block-content-to-react";
-import { ImageUrlBuilder } from "@sanity/image-url/lib/types/builder";
 
 // abaixo no tutorial tem imageUrlBuilder com o i minusculo
 const builder = imageUrlBuilder(sanityClient);
